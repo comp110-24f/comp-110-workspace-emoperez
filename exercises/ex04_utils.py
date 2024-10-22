@@ -33,7 +33,7 @@ def max(input: list[int]) -> int:
     # The while loop traverses the list by each index and compares it to the index before to see which value is greater.
     while index < len(input):
         # If the input value at the current is greater then the value of max_num is changed to that value.
-        if input[index] > input[index - 1]:
+        if max_num <= input[index]:
             max_num = input[index]
         index += 1
     # The max_num is returned which is the greatest value.
@@ -45,11 +45,16 @@ def is_equal(list_1: list[int], list_2: list[int]) -> bool:
     index: int = 0
     # Starts off as True until proven False.
     result: bool = True
-    # The while loop compares each index and if one of them doen't equal then the result is changed to false.
-    while index < len(list_1):
-        if list_1[index] != list_2[index]:
-            result = False
-        index += 1
+    # Checks to see if the length of the two list are equal before running the while loop.
+    if len(list_1) == len(list_2):
+        # The while loop compares each index and if one of them doen't equal then the result is changed to false.
+        while index < len(list_1):
+            if list_1[index] != list_2[index]:
+                result = False
+            index += 1
+    # If the length of the two list don't match then the result changes to false.
+    if len(list_1) != len(list_2):
+        result = False
     # Returns either True or False.
     return result
 
