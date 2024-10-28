@@ -46,9 +46,9 @@ def add_at_index(input: list[int], a: int, b: int) -> None:
     i: int = (
         len(input) - 2
     )  # The index is the length of the input list minus two so it can appropraitely shift the values.
-    if i < 0 or i > len(
-        input
-    ):  # If the index is less tha 0 or exceeds the length of the list
+    if (
+        b < 0 or b > len(input) - 1
+    ):  # If the index is less tha 0 or exceeds the length of the list or the list is empty
         raise IndexError(
             "Index is out of bounds for the input list"
         )  # Then an index error is displayed.

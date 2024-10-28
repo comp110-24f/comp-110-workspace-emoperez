@@ -12,6 +12,7 @@ import pytest
 def test_only_evens_mutate() -> None:
     """Checks to see that the inputted list wasn't mutated."""
     a: list[int] = [8, 2, 6, 7, 0, 1]
+    only_evens(a)
     assert a == [8, 2, 6, 7, 0, 1]
 
 
